@@ -48,5 +48,5 @@ res=df.withColumn("majorsector_percent",F.explode(F.col("majorsector_percent")))
 
 #res.printSchema()
 res.createTempView("worldbank")
-url="jdbc:mysql://mysqldb.c5logfp8eply.ap-south-1.rds.amazonaws.com:3306/sqldb"
+url="jdbc:mysql://mysqldb.dkln68dfkj.ap-south-1.rds.amazonaws.com:3306/sqldb"
 res.write.format("jdbc").option("url",url).mode("overwrite").option("user","username").option("password","password").option("driver","com.mysql.cj.jdbc.Driver").option("dbtable","sparkjson").save()
