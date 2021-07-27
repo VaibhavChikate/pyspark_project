@@ -3,7 +3,7 @@ from pyspark.sql import *
 from pyspark.sql.functions import *
 import sys
 spark=SparkSession.builder.master("local").appName("hivetesting").enableHiveSupport().getOrCreate()
-url="jdbc:mysql://mysqldb.c5logfp8eply.ap-south-1.rds.amazonaws.com:3306/sqldb"
+url="jdbc:mysql://mysqldb.jhdg5skjh.ap-south-1.rds.amazonaws.com:3306/sqldb"
 table=sys.argv[1]
 df=spark.read.format("jdbc").option("url",url).option("driver","com.mysql.cj.jdbc.Driver").option("user","username").option("password","password").option("dbtable","bank").load()
 df.show()
