@@ -2,7 +2,7 @@ from pyspark import *
 from pyspark.sql import *
 from pandas import *
 spark=SparkSession.builder.master("local").appName("testing").getOrCreate()
-url="jdbc:mysql://mysqldb.c5logfp8eply.ap-south-1.rds.amazonaws.com:3306/sqldb"
+url="jdbc:mysql://mysqldb.sfd5fdslkjs.ap-south-1.rds.amazonaws.com:3306/sqldb"
 qry="(select * from bank )as tmp"
 df=spark.read\
     .format("jdbc")\
